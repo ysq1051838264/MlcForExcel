@@ -28,7 +28,6 @@ class AndroidMlc(override val filename: String, override val targetIndex: Int) :
         val ele = root.addElement("string")
         ele.addAttribute("name", line.key)
         ele.addText(line.values[targetIndex].stringWithoutEscapeChars)
-
     }
 
     override fun writeFile() {
@@ -71,6 +70,15 @@ class AndroidMlc(override val filename: String, override val targetIndex: Int) :
                 }
                 Lang.Russian -> {
                     "-ru-rRU"
+                }
+                Lang.Spanish -> {
+                    "-es-rES"
+                }
+                Lang.Portuguese -> {
+                    "-pt-rPT"
+                }
+                Lang.Arabic -> {
+                    "-ar-rEG"
                 }
                 else -> {
                     ""

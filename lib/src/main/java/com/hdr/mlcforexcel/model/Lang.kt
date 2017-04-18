@@ -11,5 +11,8 @@ enum class Lang {
     Japanese, //日文
     German, //德文
     French, //法文
-    Russian//俄语
+    Russian,//俄语
+    Spanish,//西班牙语
+    Portuguese,//葡萄牙语
+    Arabic//阿拉伯语
 }

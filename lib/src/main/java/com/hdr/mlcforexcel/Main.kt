@@ -2,6 +2,8 @@ package com.hdr.mlcforexcel
 
 import com.hdr.mlcforexcel.mlc.*
 import com.hdr.mlcforexcel.model.Lang
+import com.hdr.mlcforexcel.prehandler.AppNamePreHandler
+import com.hdr.mlcforexcel.prehandler.TranditionalPrehandler
 import com.hdr.mlcforexcel.sourcereader.ExcelSourceReader
 import com.hdr.mlcforexcel.sourcereader.RedmineSourceReader
 import com.hdr.mlcforexcel.sourcereader.SourceReader
@@ -46,11 +48,22 @@ fun main(argv: Array<String>) {
     mls.add(ExcelMlc(targetDir + "多语言.xls"))
     mls.add(RedmineMlc(targetDir + "多语言.txt"))
 
+    val preHandlers = arrayOf(TranditionalPrehandler, AppNamePreHandler("yolanda", "RENPHO"))
+
     lineList.forEach {
-        if (it.values[2].isEmpty()) {
-            it.values[2] = ZHConverter.convert(it.values[0], ZHConverter.TRADITIONAL)
+        line ->
+        preHandlers.forEach {
+            handler ->
+            handler.handle(line.values)
         }
     }
+
+
+//    lineList.forEach {
+//        if (it.values[1].isEmpty()) {
+//            it.values[1] = ZHConverter.convert(it.values[0], ZHConverter.TRADITIONAL)
+//        }
+//    }
 
     langs.forEachIndexed { index, lang ->
         mls.add(AndroidMlc(AndroidMlc.filename(targetDir, lang), index))
