@@ -1,8 +1,10 @@
 package com.hdr.mlcforexcel
 
 import com.hdr.mlcforexcel.mlc.*
+import com.hdr.mlcforexcel.model.AppName
 import com.hdr.mlcforexcel.model.Lang
 import com.hdr.mlcforexcel.prehandler.AppNamePreHandler
+import com.hdr.mlcforexcel.prehandler.PreHandler
 import com.hdr.mlcforexcel.prehandler.TranditionalPrehandler
 import com.hdr.mlcforexcel.sourcereader.ExcelSourceReader
 import com.hdr.mlcforexcel.sourcereader.RedmineSourceReader
@@ -38,7 +40,7 @@ fun main(argv: Array<String>) {
         return
     }
 
-    val lineList = sourceReader.readAll()
+    var lineList = sourceReader.readAll()
 
     val targetDir = filePath.substring(0, filePath.lastIndexOf("/")) + "/mlc/"
     File(targetDir).apply { if (!exists()) mkdir() }
@@ -48,43 +50,46 @@ fun main(argv: Array<String>) {
     mls.add(ExcelMlc(targetDir + "多语言.xls"))
     mls.add(RedmineMlc(targetDir + "多语言.txt"))
 
-    val preHandlers = arrayOf(TranditionalPrehandler, AppNamePreHandler("yolanda", "RENPHO"))
+    val appNames = AppName.values()
 
-    lineList.forEach {
-        line ->
-        preHandlers.forEach {
-            handler ->
-            handler.handle(line.values)
-        }
-    }
+//    var preHandlers = arrayOf(TranditionalPrehandler, AppNamePreHandler("yolanda", "kitnew"))
 
+    appNames.forEachIndexed {
+        i, name ->
+        val preHandlers = arrayOf(TranditionalPrehandler, AppNamePreHandler("yolanda", name.toString()))
 
-//    lineList.forEach {
-//        if (it.values[1].isEmpty()) {
-//            it.values[1] = ZHConverter.convert(it.values[0], ZHConverter.TRADITIONAL)
-//        }
-//    }
-
-    langs.forEachIndexed { index, lang ->
-        mls.add(AndroidMlc(AndroidMlc.filename(targetDir, lang), index))
-        mls.add(IOSMlc(IOSMlc.filename(targetDir, lang), index))
-    }
-    lineList.forEachIndexed {
-        index, line ->
-        mls.forEach {
-
-            var valid = true
-
-            it.invalidPrefix.forEach {
-                prefix ->
-                if (line.key.startsWith(prefix)) {
-                    valid = false
-                    return@forEach
-                }
+        lineList.forEach {
+            line ->
+            preHandlers.forEach {
+                handler ->
+                handler.handle(line.values)
             }
-            if (valid)
-                it.handlerLine(index, line)
         }
+
+        langs.forEachIndexed { index, lang ->
+            mls.add(AndroidMlc(AndroidMlc.filename(targetDir + name + "/", lang), index))
+            mls.add(IOSMlc(IOSMlc.filename(targetDir + name + "/", lang), index))
+        }
+
+        lineList.forEachIndexed {
+            index, line ->
+            mls.forEach {
+                var valid = true
+
+                it.invalidPrefix.forEach {
+                    prefix ->
+                    if (line.key.startsWith(prefix)) {
+                        valid = false
+                        return@forEach
+                    }
+                }
+                if (valid)
+                    it.handlerLine(index, line)
+            }
+        }
+
+         lineList = sourceReader.readAll()
     }
+
     mls.forEach(Mlc::writeFile)
 }
