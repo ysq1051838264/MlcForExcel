@@ -1,15 +1,15 @@
 package com.hdr.mlcforexcel
 
 import com.hdr.mlcforexcel.mlc.*
+import com.hdr.mlcforexcel.model.App
 import com.hdr.mlcforexcel.model.AppName
 import com.hdr.mlcforexcel.model.Lang
+import com.hdr.mlcforexcel.model.Line
 import com.hdr.mlcforexcel.prehandler.AppNamePreHandler
-import com.hdr.mlcforexcel.prehandler.PreHandler
 import com.hdr.mlcforexcel.prehandler.TranditionalPrehandler
 import com.hdr.mlcforexcel.sourcereader.ExcelSourceReader
 import com.hdr.mlcforexcel.sourcereader.RedmineSourceReader
 import com.hdr.mlcforexcel.sourcereader.SourceReader
-import com.spreada.utils.chinese.ZHConverter
 import java.io.File
 import java.util.*
 
@@ -17,7 +17,6 @@ import java.util.*
  * 路径
  * Created by hdr on 16/11/21.
  */
-
 
 fun main(argv: Array<String>) {
     if (argv.size == 0) {
@@ -40,7 +39,7 @@ fun main(argv: Array<String>) {
         return
     }
 
-    var lineList = sourceReader.readAll()
+    var lineList = sourceReader.readAll() as ArrayList<Line>
 
     val targetDir = filePath.substring(0, filePath.lastIndexOf("/")) + "/mlc/"
     File(targetDir).apply { if (!exists()) mkdir() }
@@ -52,28 +51,36 @@ fun main(argv: Array<String>) {
 
     val appNames = AppName.values()
 
-//    var preHandlers = arrayOf(TranditionalPrehandler, AppNamePreHandler("yolanda", "kitnew"))
+    val traPreHandler = TranditionalPrehandler
+
+    lineList.forEach {
+        line ->
+        traPreHandler.handle(line.values)
+    }
+
+    val appList = ArrayList<App>()
 
     appNames.forEachIndexed {
         i, name ->
-        val preHandlers = arrayOf(TranditionalPrehandler, AppNamePreHandler("yolanda", name.toString()))
-
+        val app = App(preHandler = AppNamePreHandler("feelfit", name.toString()))
+        langs.forEachIndexed { index, lang ->
+            app.mlcList.add(AndroidMlc(AndroidMlc.filename(targetDir + name + "/", lang), index))
+            app.mlcList.add(IOSMlc(IOSMlc.filename(targetDir + name + "/", lang), index))
+        }
+        appList.add(app)
         lineList.forEach {
             line ->
-            preHandlers.forEach {
-                handler ->
-                handler.handle(line.values)
-            }
+            val _line = line.copy(values = line.values.map { it }.toMutableList())
+            app.preHandler.handle(_line.values)
+            app.lineList.add(_line)
         }
+    }
 
-        langs.forEachIndexed { index, lang ->
-            mls.add(AndroidMlc(AndroidMlc.filename(targetDir + name + "/", lang), index))
-            mls.add(IOSMlc(IOSMlc.filename(targetDir + name + "/", lang), index))
-        }
-
-        lineList.forEachIndexed {
-            index, line ->
-            mls.forEach {
+    appList.forEach {
+        app ->
+        app.lineList.forEachIndexed {
+            index,line ->
+            app.mlcList.forEach {
                 var valid = true
 
                 it.invalidPrefix.forEach {
@@ -87,9 +94,26 @@ fun main(argv: Array<String>) {
                     it.handlerLine(index, line)
             }
         }
-
-         lineList = sourceReader.readAll()
+        app.mlcList.forEach(Mlc::writeFile)
     }
 
+    lineList.forEachIndexed {
+        index, line ->
+        mls.forEach {
+
+            var valid = true
+
+            it.invalidPrefix.forEach {
+                prefix ->
+                if (line.key.startsWith(prefix)) {
+                    valid = false
+                    return@forEach
+                }
+            }
+            if (valid)
+                it.handlerLine(index, line)
+        }
+    }
     mls.forEach(Mlc::writeFile)
+
 }

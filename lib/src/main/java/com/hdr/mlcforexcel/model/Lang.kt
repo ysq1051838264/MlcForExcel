@@ -14,5 +14,6 @@ enum class Lang {
     Russian,//俄语
     Spanish,//西班牙语
     Portuguese,//葡萄牙语
-    Arabic//阿拉伯语
+    Arabic,//阿拉伯语
+    Czech//捷克语
 }
