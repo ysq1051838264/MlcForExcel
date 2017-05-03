@@ -66,6 +66,9 @@ class IOSMlc(override val filename: String, override val targetIndex: Int) : Mlc
                 Lang.Czech -> {
                     "Czech"
                 }
+                Lang.Italian -> {
+                    "Italian"
+                }
                 else -> {
                     "english"
                 }

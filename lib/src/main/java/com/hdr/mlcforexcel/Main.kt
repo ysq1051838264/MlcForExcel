@@ -62,7 +62,7 @@ fun main(argv: Array<String>) {
 
     appNames.forEachIndexed {
         i, name ->
-        val app = App(preHandler = AppNamePreHandler("feelfit", name.toString()))
+        val app = App(preHandler = AppNamePreHandler("yolanda", name.toString()))
         langs.forEachIndexed { index, lang ->
             app.mlcList.add(AndroidMlc(AndroidMlc.filename(targetDir + name + "/", lang), index))
             app.mlcList.add(IOSMlc(IOSMlc.filename(targetDir + name + "/", lang), index))
@@ -99,10 +99,14 @@ fun main(argv: Array<String>) {
 
     lineList.forEachIndexed {
         index, line ->
+//        val pres = arrayOf(TranditionalPrehandler, AppNamePreHandler("feelfit","yolanda"))
+//        pres.forEach {
+//            handler ->
+//            handler.handle(line.values)
+//        }
+
         mls.forEach {
-
             var valid = true
-
             it.invalidPrefix.forEach {
                 prefix ->
                 if (line.key.startsWith(prefix)) {

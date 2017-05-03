@@ -83,6 +83,9 @@ class AndroidMlc(override val filename: String, override val targetIndex: Int) :
                 Lang.Czech -> {
                     "-cs-rCZ"
                 }
+                Lang.Italian -> {
+                    "-it-rIT"
+                }
                 else -> {
                     ""
                 }
