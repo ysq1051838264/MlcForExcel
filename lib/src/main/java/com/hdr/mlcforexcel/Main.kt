@@ -49,7 +49,14 @@ fun main(argv: Array<String>) {
     mls.add(ExcelMlc(targetDir + "多语言.xls"))
     mls.add(RedmineMlc(targetDir + "多语言.txt"))
 
-    val appNames = AppName.values()
+//    val appNames = AppName.values()
+
+    val appNames = ArrayList<String>()
+    appNames.add("yolanda")
+    appNames.add("kitnew")
+    appNames.add("RENPHO")
+    appNames.add("feelfit")
+    appNames.add("BF Scale")
 
     val traPreHandler = TranditionalPrehandler
 

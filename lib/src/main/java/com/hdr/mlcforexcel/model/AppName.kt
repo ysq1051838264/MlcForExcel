@@ -8,5 +8,4 @@ enum class AppName {
     kitnew,
     RENPHO,
     feelfit
-
 }
