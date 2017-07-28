@@ -16,11 +16,13 @@ class IOSMlc(override val filename: String, override val targetIndex: Int) : Mlc
 
     override fun handlerLine(index: Int, line: Line) {
         val content = line.values[targetIndex].replace("\"", "\\\"").replace("XX", "%@")
-        sb.append("\"${line.key}\" = \"$content\";")
-        if (line.comment.isNotEmpty()) {
-            sb.append("//${line.comment}")
+        if (content != "") {
+            sb.append("\"${line.key}\" = \"$content\";")
+            if (line.comment.isNotEmpty()) {
+                sb.append("//${line.comment}")
+            }
+            sb.append("\n")
         }
-        sb.append("\n")
     }
 
     override fun writeFile() {

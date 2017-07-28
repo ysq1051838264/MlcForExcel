@@ -1,5 +1,6 @@
 package com.hdr.mlcforexcel.mlc
 
+import com.hdr.mlcforexcel.model.Lang
 import com.hdr.mlcforexcel.model.Line
 import org.apache.poi.hssf.usermodel.HSSFWorkbook
 import org.apache.poi.hssf.util.HSSFColor
@@ -27,10 +28,11 @@ class ExcelMlc(override val filename: String) : Mlc {
         font
     }
 
-
     init {
+        //表示有多少列的宽度，因为有那个注释，所以要+1
+        val length = Lang.values().size + 1
         sheet.setColumnWidth(0, 10000)
-        kotlin.repeat(10) {
+        kotlin.repeat(length) {
             sheet.setColumnWidth(it + 1, 13000)
         }
 

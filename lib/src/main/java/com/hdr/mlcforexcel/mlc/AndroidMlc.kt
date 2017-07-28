@@ -3,7 +3,6 @@ package com.hdr.mlcforexcel.mlc
 import com.hdr.mlcforexcel.model.Lang
 import com.hdr.mlcforexcel.model.Line
 import com.hdr.mlcforexcel.uilts.stringWithoutEscapeChars
-import org.dom4j.Comment
 import org.dom4j.DocumentHelper
 import org.dom4j.dom.DOMComment
 import org.dom4j.io.OutputFormat
@@ -25,9 +24,11 @@ class AndroidMlc(override val filename: String, override val targetIndex: Int) :
         if (line.comment.isNotEmpty()) {
             root.add(DOMComment(line.comment))
         }
-        val ele = root.addElement("string")
-        ele.addAttribute("name", line.key)
-        ele.addText(line.values[targetIndex].stringWithoutEscapeChars)
+        if (line.values[targetIndex].stringWithoutEscapeChars != "") {
+            val ele = root.addElement("string")
+            ele.addAttribute("name", line.key)
+            ele.addText(line.values[targetIndex].stringWithoutEscapeChars)
+        }
     }
 
     override fun writeFile() {
