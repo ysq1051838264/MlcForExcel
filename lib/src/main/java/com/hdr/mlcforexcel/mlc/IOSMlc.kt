@@ -15,7 +15,7 @@ class IOSMlc(override val filename: String, override val targetIndex: Int) : Mlc
     val sb = StringBuilder()
 
     override fun handlerLine(index: Int, line: Line) {
-        val content = line.values[targetIndex].replace("\"", "\\\"").replace("XX", "%@")
+        val content = line.values[targetIndex].replace("\"", "\\\"").replace("xx", "%@")
         if (content != "") {
             sb.append("\"${line.key}\" = \"$content\";")
             if (line.comment.isNotEmpty()) {
