@@ -2,7 +2,6 @@ package com.hdr.mlcforexcel
 
 import com.hdr.mlcforexcel.mlc.*
 import com.hdr.mlcforexcel.model.App
-import com.hdr.mlcforexcel.model.AppName
 import com.hdr.mlcforexcel.model.Lang
 import com.hdr.mlcforexcel.model.Line
 import com.hdr.mlcforexcel.prehandler.AppNamePreHandler
@@ -57,6 +56,7 @@ fun main(argv: Array<String>) {
     appNames.add("RENPHO")
     appNames.add("feelfit")
     appNames.add("BF Scale")
+    appNames.add("TT healthier")
 
     val traPreHandler = TranditionalPrehandler
 
