@@ -48,8 +48,6 @@ fun main(argv: Array<String>) {
     mls.add(ExcelMlc(targetDir + "多语言.xls"))
     mls.add(RedmineMlc(targetDir + "多语言.txt"))
 
-//    val appNames = AppName.values()
-
     val appNames = ArrayList<String>()
     appNames.add("yolanda")
     appNames.add("kitnew")
@@ -60,38 +58,34 @@ fun main(argv: Array<String>) {
 
     val traPreHandler = TranditionalPrehandler
 
-    lineList.forEach {
-        line ->
+    lineList.forEach { line ->
         traPreHandler.handle(line.values)
     }
 
     val appList = ArrayList<App>()
 
-    appNames.forEachIndexed {
-        i, name ->
+    appNames.forEachIndexed { i, name ->
         val app = App(preHandler = AppNamePreHandler("yolanda", name.toString()))
         langs.forEachIndexed { index, lang ->
             app.mlcList.add(AndroidMlc(AndroidMlc.filename(targetDir + name + "/", lang), index))
             app.mlcList.add(IOSMlc(IOSMlc.filename(targetDir + name + "/", lang), index))
+            if (lang != Lang.SimplifiedChinese && lang != Lang.English)
+                app.mlcList.add(SingleExcelMlc(SingleExcelMlc.filename(targetDir + name + "/", lang), index))
         }
         appList.add(app)
-        lineList.forEach {
-            line ->
+        lineList.forEach { line ->
             val _line = line.copy(values = line.values.map { it }.toMutableList())
             app.preHandler.handle(_line.values)
             app.lineList.add(_line)
         }
     }
 
-    appList.forEach {
-        app ->
-        app.lineList.forEachIndexed {
-            index,line ->
+    appList.forEach { app ->
+        app.lineList.forEachIndexed { index, line ->
             app.mlcList.forEach {
                 var valid = true
 
-                it.invalidPrefix.forEach {
-                    prefix ->
+                it.invalidPrefix.forEach { prefix ->
                     if (line.key.startsWith(prefix)) {
                         valid = false
                         return@forEach
@@ -104,9 +98,8 @@ fun main(argv: Array<String>) {
         app.mlcList.forEach(Mlc::writeFile)
     }
 
-    lineList.forEachIndexed {
-        index, line ->
-//        val pres = arrayOf(TranditionalPrehandler, AppNamePreHandler("feelfit","yolanda"))
+    lineList.forEachIndexed { index, line ->
+        //        val pres = arrayOf(TranditionalPrehandler, AppNamePreHandler("feelfit","yolanda"))
 //        pres.forEach {
 //            handler ->
 //            handler.handle(line.values)
@@ -114,8 +107,7 @@ fun main(argv: Array<String>) {
 
         mls.forEach {
             var valid = true
-            it.invalidPrefix.forEach {
-                prefix ->
+            it.invalidPrefix.forEach { prefix ->
                 if (line.key.startsWith(prefix)) {
                     valid = false
                     return@forEach
