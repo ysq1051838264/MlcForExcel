@@ -22,7 +22,7 @@ public class XlsxToJson {
         try {
             inputStream = new FileInputStream("/Users/ysq/Documents/faq.xlsx");
             XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
-            writer = new FileWriter("/Users/ysq/Documents/fa.json");
+            writer = new FileWriter("/Users/ysq/Documents/de.json");
             JSONObject jsonData = transferXlsxToJson(workbook);
             jsonData.write(writer);
         } catch (Exception e) {
@@ -122,8 +122,9 @@ public class XlsxToJson {
                     }
                 }
             }
-
-            String s = xRow.getCell(0).getStringCellValue();
+            String s = "";
+            if (xRow.getCell(0) != null)
+                s = xRow.getCell(0).getStringCellValue();
             if (!Objects.equals(s, "") || rowIndex == lastRowNum) {
                 if (!Objects.equals(question, "")) {
                     if (xRow.getLastCellNum() != 1) {
