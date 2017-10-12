@@ -20,9 +20,9 @@ public class XlsxToJson {
         FileInputStream inputStream = null;
         FileWriter writer = null;
         try {
-            inputStream = new FileInputStream("/Users/ysq/Documents/faq.xlsx");
+            inputStream = new FileInputStream("/Users/ysq/Documents/faq.xls");
             XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
-            writer = new FileWriter("/Users/ysq/Documents/de.json");
+            writer = new FileWriter("/Users/ysq/Documents/jp.json");
             JSONObject jsonData = transferXlsxToJson(workbook);
             jsonData.write(writer);
         } catch (Exception e) {

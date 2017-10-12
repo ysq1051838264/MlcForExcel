@@ -1,0 +1,757 @@
+{
+  "title": "FAQ",
+  "sections": [
+    {
+      "title": "注意事項",
+      "questions": [
+        {
+          "question": "ペースメーカーを装着しています。本製品は使用可能ですか？",
+          "answers": [
+            {
+              "content": "ペースメーカーや体内電気機器を装着されている方は、装着している機器に重大な影響を与える可能性がありますので、体組成計・体脂肪計の測定を行わないでください。",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "question": "本製品を使用するにあたって、年齢制限はありますか？",
+          "answers": [
+            {
+              "level": 1,
+              "content": "18歳以下は体組成計のご利用はご遠慮ください。成長期は、体組成分析システムが正確に測定できない事があります。",
+              "type": "string"
+            },
+            {
+              "type": "table",
+              "header": [
+                "設定機能",
+                "有効年齢"
+              ],
+              "body": [
+                [
+                  "体重",
+                  "制限なし"
+                ],
+                [
+                  "BMI",
+                  "４歳以上"
+                ],
+                [
+                  "体脂率",
+                  "10歳以上"
+                ],
+                [
+                  "体水分",
+                  "10歳以上"
+                ],
+                [
+                  "皮下脂肪",
+                  "10歳以上"
+                ],
+                [
+                  "基礎代謝量",
+                  "10歳以上"
+                ],
+                [
+                  "除脂肪体重",
+                  "10歳以上"
+                ],
+                [
+                  "内蔵脂肪レベル",
+                  "18歳以上"
+                ],
+                [
+                  "骨格筋率",
+                  "18歳以上"
+                ],
+                [
+                  "筋肉量",
+                  "18歳以上"
+                ],
+                [
+                  "骨量",
+                  "18歳以上"
+                ],
+                [
+                  "タンパク質",
+                  "18歳以上"
+                ],
+                [
+                  "体内年齢",
+                  "18歳以上"
+                ]
+              ]
+            },
+            {
+              "level": 1,
+              "content": "妊娠されている方：脂肪率等は、正確な測定値が表示されない場合がありますので体重計のみをご使用ください。",
+              "type": "string"
+            },
+            {
+              "level": 1,
+              "content": "本格的に運動をされている方：本製品は家庭用となります。専門機器で測定した筋肉量及び脂肪量の数値と本製品で測定した数値では若干誤差があります。",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "question": "バッテリー注意事項",
+          "answers": [
+            {
+              "content": "一週間以上使用ない場合は、製品の使用寿命を長くするや能源の節約ため、バッテリーを取り出してください。",
+              "type": "string"
+            },
+            {
+              "content": "製品に付属しているバッテリーはお試し用ですので、新しいバッテリーを取り替えてください。",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "question": "この体組成計はAPP(アプリケーションソフトウエア)と連動しますか？",
+          "answers": [
+            {
+              "content": "ご購入いただいた体組成計の本体では、体重としてのみご利用いただけます。脂肪率や水分量は、お持ちのスマートフォンで確認することができます。ペアリングを行い設定をしてください。APPの名前は「Yolanda」です。IOS7/7以降&Android4.3/4.3以降のスマートフォンで対応が可能です。",
+              "type": "string"
+            },
+            {
+              "content": "Apple StoreとGoogle Playには無料でダウンロード頂けます。Yolandaはお客様やご家族全ての計測データを保存できます。",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "question": "APPを開くと、身長や年齢等プライベートな情報を入力しなければいけないでしょうか。個人情報は大丈夫でしょうか。",
+          "answers": [
+            {
+              "content": "生体電気インピーダンス（BIA）測定法は身長、年齢、性別と体重、身体インピーダンスを組み合わせ脂肪率を測定します。身長、年齢、性別は必須項目となりますのでご登録をお願いします。",
+              "type": "string"
+            },
+            {
+              "content": "また、お客様の個人情報は、体脂肪率を測定する為のだけの必要な情報となりますので、その他の用途には個人情報は使用致しません。",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "question": "体重計のディスプレイに何も表示されない、または、表示が異常（EER）ならどうしますか？",
+          "answers": [
+            {
+              "content": "ディスプレイ表示が異常：",
+              "type": "string"
+            },
+            {
+              "id": "scale_error_1",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "LEDライトが点灯していない場合：バッテリーが消耗したかをご確認ください。バッテリーが消耗している場合は、バッテリーを入れ替えて新しいバッテリーに交換してください。",
+              "type": "string"
+            },
+            {
+              "id": "scale_error_2",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "ディスプレイに「Lo」が表示されている場合、バッテリーが消耗しているかをご確認ください。バッテリーを入れ替えてまた新しいバッテリーに交換してください。",
+              "type": "string"
+            },
+            {
+              "id": "scale_error_3",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "ディスプレイに「EER」が表示されている場合：体重計のセンサーが過負荷または損害されました。本製品の最大測定可能重量は180kgです。",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "計測データを影響する原因",
+      "questions": [
+        {
+          "question": "正確の計測方法",
+          "answers": [
+            {
+              "level": 1,
+              "content": "APPを開きます",
+              "type": "string"
+            },
+            {
+              "id": "measure_main_ui",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "靴と靴下を脱いて裸足で体重計の上にまっすぐ立ってください。足裏を電極部分に均一に触れるように立ってください。",
+              "type": "string"
+            },
+            {
+              "id": "how_measure_1",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "体重を計測してから脂肪率を計測します。",
+              "type": "string"
+            },
+            {
+              "level": 2,
+              "content": "例えば、体重が50kgの場合、体重計に乗ってからディスプレイには「50.00kg」と数字が３回点滅します。その後、ディスプレイに「０」が表示され３回点滅して、「50.00kg」が再度表示され５秒程経つとLEDライトが消えます。これで、測定が完了します。",
+              "type": "string"
+            },
+            {
+              "level": 2,
+              "content": "測定中は画面上の円が回転し続け、測定が完了したら「測定完了音」が鳴ります。（設定で「測定完了音」をオフにすることができます。）",
+              "type": "string"
+            },
+            {
+              "level": 1,
+              "content": "次の計測はディスプレイがオフになって2-3秒後してください。",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "question": "どう測定すれば誤差を避けることができますか？",
+          "answers": [
+            {
+              "level": 1,
+              "content": "体重の誤差を防ぐ方法",
+              "type": "string"
+            },
+            {
+              "id": "how_put_scale",
+              "type": "image"
+            },
+            {
+              "level": 2,
+              "content": "体組成計をご使用いただく際は、硬く平らな安定した床面に置いて測定してください。柔らかい床や安定していない床では正確に測定できません。",
+              "type": "string"
+            },
+            {
+              "type": "table",
+              "header": [
+                "測量値",
+                "最大誤算範囲"
+              ],
+              "body": [
+                [
+                  "0<x≤50KG",
+                  "±0.2KG"
+                ],
+                [
+                  "50KG<x≤100KG",
+                  "±0.3KG"
+                ],
+                [
+                  "x≤180KG",
+                  "±0.4KG"
+                ]
+              ]
+            },
+            {
+              "level": 2,
+              "content": "測定前にキャリブレーションを行ってください。体重計に乗りLEDライトが点灯し、数値が定まったら体重計から降りてください。",
+              "type": "string"
+            },
+            {
+              "level": 1,
+              "content": "体脂肪と水分率の誤差を最小限に防ぐ方法:",
+              "type": "string"
+            },
+            {
+              "level": 2,
+              "content": "本製品は生体電気インピーダンス(BIA)技術を利用して体脂肪率を計算します。BIAで測定した体脂肪率は以下の数値と関わっています。身体インピーダンス係数、身長、年齢、体重、性別のどの数値を変更しても体脂肪の数は変更します。",
+              "type": "string"
+            },
+            {
+              "level": 3,
+              "content": "ご自身の身長、体重、年齢を登録してください。正確な数値を登録しないと正確な体脂肪を測定ができません。",
+              "type": "string"
+            },
+            {
+              "level": 3,
+              "content": "素足で測定してください。正しく測定ができなくなります。",
+              "type": "string"
+            },
+            {
+              "level": 3,
+              "content": "正しい姿勢で機器本体へ乗ってください。",
+              "type": "string"
+            },
+            {
+              "id": "measure_principle",
+              "type": "image"
+            },
+            {
+              "level": 3,
+              "content": "正確な身体インピーダンス係数を得るため、測定時は足裏を電極部分に均一に触れるように立ち、約20秒間動かないでください。測定時に足裏が電極部分から離れたり、動いたりすると正確な数値がでない場合があります。",
+              "type": "string"
+            },
+            {
+              "level": 2,
+              "content": "本製品は生体電気インピーダンス(BIA)技術を利用して、測定結果を正確にするため、できるだけ同じ時間帯、同じ状況で測定をするようにお願いします。食事や水分を摂取することにより１日で0.5kgから2kgの変化があります。体脂肪率＝脂肪重量/体重、水分の減増により体脂肪率も変動します。食後、入浴後、運動後などは体内の水分量が変動するため、体脂肪率の数値が低くなってしまったり、高くなってしまったりします。",
+              "type": "string"
+            },
+            {
+              "id": "bodyfat_trend_per_day",
+              "type": "image"
+            },
+            {
+              "content": " 起床後や食後と入浴後であれば２時間以上たった後が体内の水分量が安定している状態といわれている為、連続的に正確に測定したい場合は、起床後の測定をお勧めします。",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "question": "他メーカーの体重計で測定した体脂肪率と誤差があるのは何故ですか？",
+          "answers": [
+            {
+              "content": "脂肪は体の中でも複雑な存在で、皮下脂肪や内臓脂肪などを含み、身体のそれぞれに分布しています。脂肪率を測定する機器（DEXA、BIA、水中計量方等）がいくつかあり、それぞれ測定方法は異なり測定結果も異なります。その中でも、水中計量方とDEXA（二重エネルギーX線吸収方）がスタンダードで使用されていますが、この機器でも多少の誤差は生じます。尚、一般的な家庭用体組成計は、BIA測定法を採用しています。",
+              "type": "string"
+            },
+            {
+              "content": "脂肪率の長期間の計測と管理をお勧めします。長時間の脂肪率の変化は健康管理に役たちます。具体的な数値より長時間の変化はもっと有意義だと思います。",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "APPの使用について",
+      "questions": [
+        {
+          "question": "デバイスと接続できない？",
+          "answers": [
+            {
+              "level": 1,
+              "content": "バッテリーが取り付け、Bluetoothがオンにして、スマホは体組成計の近くにあることをご確認ください。",
+              "type": "string"
+            },
+            {
+              "level": 1,
+              "content": "Android6.0以降のSDKにてBluetooth接続のためにGPS機能を求められます。",
+              "type": "string"
+            },
+            {
+              "id": "authorize_permission_feelfit",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "GPS機能を許可しても捜索できない場合はGPSを開き",
+              "type": "string"
+            },
+            {
+              "content": "Yolandaの位置情報取得を許可します",
+              "type": "string"
+            },
+            {
+              "level": 2,
+              "content": "設置で",
+              "type": "string"
+            },
+            {
+              "id": "authorize_permission_1",
+              "type": "image"
+            },
+            {
+              "level": 2,
+              "content": "位置情報サービスでYolandaをクリックして",
+              "type": "string"
+            },
+            {
+              "id": "authorize_permission_2_feelfit",
+              "type": "image"
+            },
+            {
+              "level": 2,
+              "content": "位置情報サービスでYolandaを許可してください",
+              "type": "string"
+            },
+            {
+              "id": "authorize_permission_3_feelfit",
+              "type": "image"
+            }
+          ]
+        },
+        {
+          "question": "体組成計とBluetoothのペアリング",
+          "answers": [
+            {
+              "content": "APPを開き、測量インターフェースに入ってください。以下の写真ように体重計に乗ってLEDライトを点灯します。APPが他の体重計とペアリングしていない場合は、自動的に本製品のAPPとペアリングができます。",
+              "type": "string"
+            },
+            {
+              "id": "measure_main_ui",
+              "type": "image"
+            },
+            {
+              "content": "もし、他の体重計とペアリングしたことがある場合測量インターフェース右上の＋をクリックして設備を追加します。",
+              "type": "string"
+            },
+            {
+              "id": "measure_add_device_guide",
+              "type": "image"
+            },
+            {
+              "content": "ペアリングを行う際、体組成計のLEDライトは点灯している状態を保っている状態で行ってください。",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "question": "計測の時必ずAPPを開きますか",
+          "answers": [
+            {
+              "content": "APPを開かないでも測定できます。この場合、データは体重計に保存されています。最大は20回のデータを保存できます。次回ご使用になる際、APPを開き体重計に保存しているデータが自動的にAPPに送られ、適切なメンバーアカウントに割り当てられます。受信したデータとAPPに全てのデータに３KG以上の差があった場合、手動的に割り当てまたは削除します。",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "question": "使用するユーザーを追加する方法",
+          "answers": [
+            {
+              "level": 1,
+              "content": "アカウントをクリック",
+              "type": "string"
+            },
+            {
+              "id": "user_index",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "人の形をしたアイコン（ユーザーアイコン）の左にある画像をクリックしてユーザーを追加できます",
+              "type": "string"
+            },
+            {
+              "id": "user_add_guide_1",
+              "type": "image"
+            },
+            {
+              "id": "user_add_guide_2_feelfit",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "測定には、身長・年齢・性別を駆らなず登録してください。",
+              "type": "string"
+            },
+            {
+              "level": 1,
+              "content": "Yolanda友達を追加するには、相手の登録メールアドレスを入力してください。",
+              "type": "string"
+            },
+            {
+              "level": 1,
+              "content": "ユーザーを追加後、使用するユーザーを選択し測定が出来るようになります。",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "question": "性別・年齢・身長を間違えて登録した場合、修正はできますか？",
+          "answers": [
+            {
+              "level": 1,
+              "content": "アカウントをクリックして、",
+              "type": "string"
+            },
+            {
+              "id": "user_index",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "ユーザーアイコンをクリックして",
+              "type": "string"
+            },
+            {
+              "id": "user_edit_profile_guide",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "ユーザーアイコンをクリックして性別、年齢、身長を変更できます。",
+              "type": "string"
+            },
+            {
+              "level": 1,
+              "content": "修正が変更して確認をクリックしてください。",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "question": "iPhoneのヘルスケアやはどのように連携できますか？",
+          "answers": [
+            {
+              "level": 1,
+              "content": "iPhoneのヘルスケアを開き",
+              "type": "string"
+            },
+            {
+              "id": "health_kit_logo",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "ソースをクリックして",
+              "type": "string"
+            },
+            {
+              "id": "health_kit_index",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "ソースをクリックして、ソースリストから「Yolanda」を選択してください",
+              "type": "string"
+            },
+            {
+              "id": "health_kit_feelfit",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "書き込みの許可をオン/オフにします。",
+              "type": "string"
+            },
+            {
+              "id": "health_kit_switcher_feelfit",
+              "type": "image"
+            }
+          ]
+        },
+        {
+          "question": " Google Fitとの接続する方法?",
+          "answers": [
+            {
+              "level": 1,
+              "content": "アカウント、設置をクリックして",
+              "type": "string"
+            },
+            {
+              "id": "me_setting",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "設置のところGoogle Fitをクリックして",
+              "type": "string"
+            },
+            {
+              "id": "setting_googlefit",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "Google Fitをオンにして、Google Fitの登録ページに入ります。",
+              "type": "string"
+            },
+            {
+              "id": "googlefit_switcher",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "登録して設置のGoogleFitページに戻して、GoogleFitはオンにします。",
+              "type": "string"
+            },
+            {
+              "id": "google_switcher_enable",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "体組成計に乗って計測して、データはGoogle Fitにアップロードします。APPを登録してデータを確認できます。",
+              "type": "string"
+            },
+            {
+              "id": "googlefit_result",
+              "type": "image"
+            }
+          ]
+        },
+        {
+          "question": " Fitbitとの接続する方法?",
+          "answers": [
+            {
+              "level": 1,
+              "content": "アカウント、設置をクリックして",
+              "type": "string"
+            },
+            {
+              "id": "me_setting",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "FitBit界面設置のところFitBitをクリックして",
+              "type": "string"
+            },
+            {
+              "id": "setting_fitbit",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "FitBitをオンにして、FitBitの登録ページに入ります。",
+              "type": "string"
+            },
+            {
+              "id": "fitbit_switcher",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "登録をクリックしてAPPの読み込みを許可してAPPの設置に戻してFitBitはオンのままします。",
+              "type": "string"
+            },
+            {
+              "id": "fitbit_auth",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "体組成計に乗って計測してデータはFitBitにアップロードします。FitBit APPとFitBitページで体重、BMI、脂肪率を確認できます。",
+              "type": "string"
+            },
+            {
+              "id": "fitbit_result",
+              "type": "image"
+            }
+          ]
+        },
+        {
+          "question": "Yolanda友達の追加方法。",
+          "answers": [
+            {
+              "content": "栄養士やフィットネスコーチ等自分の身体の変化を把握してほしい方、共有したい方へこの機能を使用してシェアすることが可能です。",
+              "type": "string"
+            },
+            {
+              "level": 1,
+              "content": "アカウントをクリック",
+              "type": "string"
+            },
+            {
+              "id": "user_index",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "してアイコンの左にある画像をクリックします",
+              "type": "string"
+            },
+            {
+              "id": "user_add_guide_3_feelfit",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "相手のメールアドレスを入力し確認したら測定記録が見えるようになります",
+              "type": "string"
+            },
+            {
+              "id": "user_add_guide_4_feelfit",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "相手はシステムメセッジをもらいます。相手はアカウントのメッセージセンターで確認できます。友達になるリクエストを受け入れならYolanda友達になります。",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "question": "日々の経過データは確認できますか、一部のデータを削除するこはできますか？",
+          "answers": [
+            {
+              "level": 1,
+              "content": "チャートをクリックして",
+              "type": "string"
+            },
+            {
+              "id": "chart_index",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "チャートをクリックして、折れ線グラフ内にある●（丸）をクリックして履歴データを確認することができます。",
+              "type": "string"
+            },
+            {
+              "id": "chart_click_history",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "削除したいデータの日付をクリックし、削除したいデータの右上",
+              "type": "string"
+            },
+            {
+              "level": 1,
+              "content": "削除ボタン」をクリックすると削除ができます。",
+              "type": "string"
+            },
+            {
+              "id": "history_check_data",
+              "type": "image"
+            }
+          ]
+        },
+        {
+          "question": "違う時間帯で測定したデータを比較するには、どうすれば良いでしょうか。",
+          "answers": [
+            {
+              "level": 1,
+              "content": "チャートをクリックして",
+              "type": "string"
+            },
+            {
+              "id": "chart_index",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "一週間内の体重の折れ線グラフを確認することができます。他の項目をクリックして折れ線グラフも確認することができます",
+              "type": "string"
+            },
+            {
+              "id": "chart_change_indicator",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "グラフを左右にドラッグして前のデータが見られます。",
+              "type": "string"
+            },
+            {
+              "id": "chart_slide",
+              "type": "image"
+            },
+            {
+              "level": 1,
+              "content": "チャートの上の方で時間範囲を選択することができます。（週、月、年）",
+              "type": "string"
+            },
+            {
+              "id": "chart_chart_date",
+              "type": "image"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
